@@ -1,4 +1,5 @@
-# voidymite.fr.to
-voidymite.fr.to is my personal website with fun and games, its also sort of a biography
+# VOIDYMITE.FR.TO
 
-VISIT TODAY
+I thought I wasn't part of this.
+
+https://voidymite.fr.to
