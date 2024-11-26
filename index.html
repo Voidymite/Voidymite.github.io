@@ -1,49 +1,68 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- stop snooping BITCHHH -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A demo webpage showing how to add metadata.">
+    <meta name="keywords" content="HTML, metadata, tutorial">
+    <meta name="author" content="Your Name">
+    <meta property="og:title" content="Demo Webpage">
+    <meta property="og:description" content="Learn how to add metadata to your webpage.">
+    <meta property="og:image" content="https://example.com/preview.jpg">
+    <meta property="og:url" content="https://example.com">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Demo Webpage">
+    <meta name="twitter:description" content="Learn how to add metadata to your webpage.">
+    <meta name="twitter:image" content="https://example.com/preview.jpg">
+    <meta name="robots" content="index, follow"> <!-- allow search engines to index the page -->
+    <meta name="google-site-verification" content="verification_code_here"> <!-- "google search console" verification -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          const audio = document.createElement("audio");
+          audio.src = "/assets/ambience.ogg";
+          audio.autoplay = true;
+          audio.loop = true;
+          document.body.appendChild(audio);
+        });
+    </script>
+    <title>THE END IS NEVER NOR IS IT NIGH</title>
+    <style>
 
-<html oncontextmenu="return true">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>VOIDYMITE.FR.TO</title>
-        <meta content="VOIDYMITE.FR.TO" property="og:title" />
-        <meta content="VISIT VOIDYMITE.FR.TO TODAY" property="og:description" />
-        <meta content="https://voidymite.fr.to/" property="og:url" />
-        <meta content="https://voidymite.fr.to/assets/Discord.png" property="og:image" />
-        <meta content="#ff0000" data-react-helmet="true" name="theme-color" />
+        p {
+            text-align: center;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
 
-        <style>
-            body {
-                text-align: center;
-                background-color:    black;                      /* <------ */
-                background-position: center center;              /* optional, center the image */
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+        .scrolling-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('/assets/clouds.png');
+            background-repeat: repeat-x;
+            background-position: top center;
+            animation: scroll 100s infinite;
+        }
+        @keyframes scroll {
+            from {
+                background-position: top center;
             }
-            p {font-size: 13; font-family: "SFPro", "SFPro2", sans-serif !important; font-style: var(--font-body-style);
-            font-weight: normal !important;}
-            .bottom-links {
-                color:white;
-                position: fixed;
-                bottom: 10px;
-                opacity: 0.5;
-                text-align: center;
-                width: 100%;
-                font-size: 10; font-family: "SFPro", "SFPro2", sans-serif !important; font-style: var(--font-body-style);
-                font-weight: normal !important;
+            to {
+                background-position: 100% -0;
             }
-            .bottom-image{
-            position: fixed;
-            bottom: 0px;
-            left: 0px;
-            }
-            
-        </style>
-    </head>
+        }
+    </style>
+</head>
 <body>
-    
-    <p><img src="/assets/garn.jpg" alt="GARN"></p>
-    
-    <div class="bottom-links">
-        <small><p>https://discord.gg/gxmBpKPQhv</p></small>
-    </div>
-
+    <div class="scrolling-background"></div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <p>COMING SOON</p>
 </body>
 </html>
