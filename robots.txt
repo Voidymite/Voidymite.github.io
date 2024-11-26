@@ -1,0 +1,4 @@
+# tig bitties
+User-agent: *
+Disallow: 
+Sitemap: https://voidymite.fr.to/sitemap.xml
