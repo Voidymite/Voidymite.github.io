@@ -8,14 +8,14 @@
     <meta name="keywords" content="voidymite.fr.to">
     <meta name="author" content="voidymite">
     <meta property="og:title" content="voidymite.fr.to">
-    <meta property="og:description" content="bfkd;olfnwejadskf wehkagsn ghrkags haeksfvkdsfgnHELP AHHOUWCH YOEOWCH">
-    <meta property="og:image" content="https://voidymite.fr.to/assets/clouds2.png">
+    <meta property="og:description" content="I'm Seein' Red">
+    <meta property="og:image" content="https://voidymite.fr.to/assets/face.png">
     <meta property="og:url" content="https://voidymite.fr.to"> 
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="voidymite.fr.to">
     <meta name="twitter:description" content="VISIT TODAY">
-    <meta name="twitter:image" content="https://voidymite.fr.to/assets/clouds2.png">
+    <meta name="twitter:image" content="https://voidymite.fr.to/assets/face.png">
     <meta name="robots" content="index, follow"> <!-- allow search engines to index the page -->
     <!-- <script>
         document.addEventListener("DOMContentLoaded", () => {
@@ -46,7 +46,16 @@
         button {
             
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            position:sticky
+            text-align: center;
+            align-self: center;
+        }
+
+        .GeneratedMarquee {
+            font-family:'Comic Sans MS';
+            font-size:2em;
+            line-height:1.3em;
+            color:#FF3300;
+            padding:1.5em;   
         }
 
         img {
@@ -91,6 +100,9 @@
             let element = document.body;
             element.classList.toggle("dark-mode");
 
+            let sfx = new Audio('/assets/lightswitch.wav');
+            sfx.play()
+
             let theme = localStorage.getItem("theme");
             if (theme && theme === "dark-mode") {
                 localStorage.setItem("theme", "");
@@ -105,14 +117,13 @@
 
     <p><a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=FwyZcOx4phM"><img src="/assets/evilface.png" alt="EVILFACE"></a></p>
 
-    <h1><p>"Seein' Red"</p></h1>
+    <h1><p>HOME</p></h1>
 
     <p>Welcome to Voidymite's personal website</p>
-    <p>It appears you have stumbled upon a small corner of the Web</p>
+    <p>It appears you have stumbled upon a small corner of the Web.</p>
+    <!-- <p>Traverse it with the options below:</p> - not yet -->
 
-
-    <!-- <button type="button" onclick="themeToggle()">TOGGLE THEME</button> -->
-<!-- <div id="theme"></div> -->
+    <p><button type="button" onclick="themeToggle()">TOGGLE DARK THEME</button></p>
     <br><br><br>
 
     <p>a</p>
