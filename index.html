@@ -17,7 +17,7 @@
     <meta name="twitter:description" content="VISIT TODAY">
     <meta name="twitter:image" content="https://voidymite.fr.to/assets/clouds2.png">
     <meta name="robots" content="index, follow"> <!-- allow search engines to index the page -->
-    <script>
+    <!-- <script>
         document.addEventListener("DOMContentLoaded", () => {
           const audio = document.createElement("audio");
           audio.src = "/assets/ambience.ogg";
@@ -25,10 +25,14 @@
           audio.loop = true;
           document.body.appendChild(audio);
         });
-    </script>
-    <title>THE END IS NEVER NOR IS IT NIGH</title>
+    </script> -->
+    <title>Home - VOIDYMITE</title>
+    <link rel="icon" type="image/x-icon" href="/assets/favicon-32x32.png">
     <style>
-
+        .dark-mode {
+        background-color: black;
+        color: white;
+        }
         p {
             text-align: center;
             font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -38,30 +42,81 @@
             margin: 0;
             overflow: hidden;
         }
-        .scrolling-background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('/assets/clouds.png');
-            background-repeat: repeat-x;
-            background-position: top center;
-            animation: scroll 100s infinite;
+
+        button {
+            
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            position:sticky
         }
-        @keyframes scroll {
-            from {
-                background-position: top center;
-            }
-            to {
-                background-position: 100% -0;
-            }
-        }
+
+        img {
+  /* Start the shake animation and make the animation last for 0.5 seconds */
+  animation: shake 0.5s;
+
+  /* When the animation is finished, start again */
+  animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px); }
+  10% { transform: translate(-1px, -1px); }
+  20% { transform: translate(-1px, 0px); }
+  30% { transform: translate(1px, 1px); }
+  40% { transform: translate(1px, -1px); }
+  50% { transform: translate(-1px, 1px); }
+  60% { transform: translate(-1px, 1px); }
+  70% { transform: translate(1px, 1px); }
+  80% { transform: translate(-1px, -1px); }
+  90% { transform: translate(1px, 1px); }
+  100% { transform: translate(1px, -1px); }
+}
     </style>
 </head>
 <body>
-    <div class="scrolling-background"></div>
+    <!-- <div class="scrolling-background"></div>
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <p>COMING SOON</p>
+    <p>COMING SOON</p> -->
+
+    <script>
+        // On page load set the theme.
+        (function() {
+            let onpageLoad = localStorage.getItem("theme") || "";
+            let element = document.body;
+            element.classList.add(onpageLoad);
+            document.getElementById("theme").textContent =
+                localStorage.getItem("theme") || "light";
+        })();
+
+        function themeToggle() {
+            let element = document.body;
+            element.classList.toggle("dark-mode");
+
+            let theme = localStorage.getItem("theme");
+            if (theme && theme === "dark-mode") {
+                localStorage.setItem("theme", "");
+            } else {
+                localStorage.setItem("theme", "dark-mode");
+            }
+
+            document.getElementById("theme").textContent = localStorage.getItem("theme");
+        }
+
+    </script>
+
+    <p><a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=FwyZcOx4phM"><img src="/assets/evilface.png" alt="EVILFACE"></a></p>
+
+    <h1><p>"Seein' Red"</p></h1>
+
+    <p>Welcome to Voidymite's personal website</p>
+    <p>It appears you have stumbled upon a small corner of the Web</p>
+
+
+    <!-- <button type="button" onclick="themeToggle()">TOGGLE THEME</button> -->
+<!-- <div id="theme"></div> -->
+    <br><br><br>
+
+    <p>a</p>
+
+
 </body>
 </html>
