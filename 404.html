@@ -12,9 +12,41 @@
         <meta content="#ff0000" data-react-helmet="true" name="theme-color" />
 
         <style>
-            body {text-align: center;}
-            p {font-size: 13; font-family: "SFPro", "SFPro2", sans-serif !important; font-style: var(--font-body-style);
-            font-weight: normal !important;}
+
+            html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden; /* Prevent scrollbars */
+            }
+
+            .background {
+            position: fixed; /* Stay in the same position during scroll */
+            top: 0;
+            left: 0;
+            width: 200%; /* Double size to create the effect */
+            height: 200%; /* Double size to create the effect */
+            background: url('/assets/starstwinkle.gif') repeat; /* Replace with your image */
+            animation: scroll-diagonal 126s linear infinite;
+            z-index: -1; /* Send the background behind content */
+            }
+
+            @keyframes scroll-diagonal {
+            from {
+                transform: translate(0, 0);
+            }
+            to {
+                transform: translate(-50%, -50%);
+            }
+            }
+
+            .content {
+            position: relative;
+            text-align: center;
+            color: white;
+            font-family: Arial, sans-serif;
+            padding: 50px;
+            }
             .bottom-links {
                 
                 position: fixed;
@@ -33,13 +65,13 @@
         </style>
     </head>
 <body>
-    <h1><p style="margin-top: 0;">NOT FOUND</p></h1>
-    
-    
-    <p><a href="/">HOME</a></p>
-    
-    <div class="bottom-links">
+
+    <div class="background"></div>
+    <div class="content">
+      <p><img src="/assets/snoopy.gif" alt="Snoopy"></p>
+      <div class="bottom-links">
         <small><p>WEBSITE OWNED BY VOIDYMITE. ALL RIGHTS RESERVED</p></small>
+      </div>
     </div>
 
 </body>
