@@ -85,9 +85,9 @@
     <p>COMING SOON</p> -->
 
     <script>
-        // On page load set the theme.
+        
         (function() {
-            let onpageLoad = localStorage.getItem("theme") || "";
+            let onpageLoad = localStorage.getItem("theme") || "dark-mode"; // default to darkmode
             let element = document.body;
             element.classList.add(onpageLoad);
             document.getElementById("theme").textContent =
