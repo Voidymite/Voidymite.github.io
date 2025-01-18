@@ -1,0 +1,63 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Duck vs Bread</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="title-screen">
+    <h1>Duck vs Bread</h1>
+    <div class="menu-buttons">
+      <button id="play-button">Play Game</button>
+      <button id="manual-button">Controls & Info</button>
+    </div>
+  </div>
+
+  <div id="manual" class="hidden">
+    <h2>Controls & Power-ups</h2>
+    <div class="controls-section">
+      <h3>Controls:</h3>
+      <ul>
+        <li>🎮 Arrow Keys / A,D - Move left/right</li>
+        <li>🏃 Hold Shift - Run faster</li>
+        <li>⬆️ Z - Jump (press twice to double jump)</li>
+        <li>💫 Hold X - Activate powerup</li>
+      </ul>
+    </div>
+    <div class="powerups-section">
+      <h3>Power-ups:</h3>
+      <ul>
+        <li>🔥 Flamethrower - Burn bread in front of you</li>
+        <li>🍽️ Eat Power - Instantly eat bread on contact</li>
+        <li>💨 Fan - Push bread away from you</li>
+        <li>🥚 Eggs - Throw eggs that target the nearest bread</li>
+        <li>🐤 Mini Duck - Become smaller and jump higher</li>
+        <li>💣 Bombs - Drop bombs that explode on contact with bread</li>
+        <li>⚔️ Sword - Throw a spinning sword that slices through bread</li>
+      </ul>
+    </div>
+    <button id="back-button">Back to Menu</button>
+  </div>
+
+  <div id="game" class="hidden">
+    <div id="player"></div>
+    <div id="game-over" class="hidden">
+      <h1>Game Over!</h1>
+      <p>Score: <span id="final-score">0</span></p>
+      <button id="restart-button">Play Again</button>
+      <button id="menu-button">Back to Menu</button>
+    </div>
+    <div id="ui">
+      <div id="score">
+        <div>Score: <span id="score-value">0</span></div>
+        <div id="next-powerup">Next powerup: 100 points</div>
+      </div>
+      <div id="powerup-timer" class="hidden">
+        <span id="powerup-timer-icon"></span>
+        <span id="powerup-time-left">10s</span>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="game.js"></script>
+</body>
+</html>

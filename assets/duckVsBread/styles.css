@@ -1,0 +1,383 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  background: #87CEEB;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+#title-screen {
+  background: rgba(0, 0, 0, 0.8);
+  padding: 2rem;
+  border-radius: 15px;
+  text-align: center;
+  color: white;
+}
+
+#title-screen h1 {
+  font-size: 3rem;
+  color: #4eb2e0;
+  margin-bottom: 2rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.menu-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#title-screen button,
+#manual button {
+  background: #4CAF50;
+  border: none;
+  padding: 15px 30px;
+  color: white;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.1s;
+}
+
+#title-screen button:hover,
+#manual button:hover {
+  background: #45a049;
+  transform: scale(1.05);
+}
+
+#manual {
+  background: rgba(0, 0, 0, 0.9);
+  padding: 2rem;
+  border-radius: 15px;
+  color: white;
+  max-width: 500px;
+}
+
+#manual h2 {
+  color: #4eb2e0;
+  margin-top: 0;
+}
+
+#manual h3 {
+  color: #78c5e6;
+  margin-bottom: 0.5rem;
+}
+
+#manual ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#manual li {
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+}
+
+#back-button {
+  margin-top: 1.5rem;
+  width: 100%;
+}
+
+#game {
+  width: 800px;
+  height: 400px;
+  background: #4eb2e0;
+  position: relative;
+  border: 4px solid #2d4359;
+  overflow: hidden;
+}
+
+#player {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  bottom: 0;
+  left: 50px;
+  transition: transform 0.1s;
+  font-size: 40px;
+  line-height: 1;
+  user-select: none;
+  transform: scaleX(-1);
+}
+
+#player::before {
+  content: '🦆';
+  position: absolute;
+}
+
+.enemy {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  font-size: 30px;
+  line-height: 1;
+  user-select: none;
+}
+
+.enemy::before {
+  content: '🍞';
+  position: absolute;
+}
+
+#ui {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-family: Arial, sans-serif;
+  font-size: 24px;
+  color: white;
+  text-shadow: 2px 2px 2px rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: space-between;
+  width: calc(100% - 40px);
+}
+
+#score {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+#next-powerup {
+  font-size: 18px;
+  opacity: 0.8;
+}
+
+#powerup-timer {
+  font-family: Arial, sans-serif;
+  font-size: 24px;
+  color: white;
+  text-shadow: 2px 2px 2px rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#powerup-timer.hidden {
+  visibility: hidden;
+}
+
+#powerup-timer-icon {
+  font-size: 24px;
+}
+
+.platform {
+  position: absolute;
+  background: #2d4359;
+  height: 20px;
+}
+
+#game-over {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.9);
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  color: white;
+  z-index: 1000;
+}
+
+#game-over.hidden {
+  display: none;
+}
+
+#game-over h1 {
+  margin: 0 0 1rem 0;
+  color: #ff4444;
+}
+
+#restart-button {
+  background: #4CAF50;
+  border: none;
+  padding: 10px 20px;
+  color: white;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background 0.3s;
+}
+
+#restart-button:hover {
+  background: #45a049;
+}
+
+.powerup {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  font-size: 30px;
+  line-height: 1;
+  user-select: none;
+  animation: float 1s infinite ease-in-out alternate;
+}
+
+.powerup.eggs::before {
+  content: '🥚';
+}
+
+.powerup.flamethrower::before {
+  content: '🔥';
+}
+
+.powerup.eat::before {
+  content: '🍽️';
+}
+
+.powerup.fan::before {
+  content: '💨';
+}
+
+.powerup.mini::before {
+  content: '🐤';
+}
+
+.powerup.bomb::before {
+  content: '💣';
+}
+
+.powerup.sword::before {
+  content: '⚔️';
+}
+
+.egg {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  font-size: 20px;
+  line-height: 1;
+  user-select: none;
+  pointer-events: none;
+}
+
+.egg::before {
+  content: '🥚';
+  position: absolute;
+}
+
+.bomb {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  font-size: 20px;
+  line-height: 1;
+  user-select: none;
+  pointer-events: none;
+}
+
+.bomb::before {
+  content: '💣';
+  position: absolute;
+}
+
+.explosion {
+  position: absolute;
+  pointer-events: none;
+  animation: explode 0.5s forwards;
+}
+
+@keyframes float {
+  from { transform: translateY(0); }
+  to { transform: translateY(-10px); }
+}
+
+@keyframes explode {
+  0% { transform: scale(0); opacity: 1; }
+  50% { transform: scale(2); opacity: 0.8; }
+  100% { transform: scale(3); opacity: 0; }
+}
+
+.effect {
+  position: absolute;
+  pointer-events: none;
+}
+
+.flame {
+  animation: flame-flicker 0.1s infinite;
+}
+
+@keyframes flame-flicker {
+  0% { opacity: 0.8; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.1); }
+  100% { opacity: 0.8; transform: scale(1); }
+}
+
+.wind {
+  animation: wind-move 0.5s infinite linear;
+}
+
+@keyframes wind-move {
+  0% { opacity: 0.8; transform: translateX(0); }
+  100% { opacity: 0; transform: translateX(100px); }
+}
+
+.hidden {
+  display: none !important;
+}
+
+#debug-menu {
+  position: fixed;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.9);
+  padding: 1rem;
+  border-radius: 10px;
+  color: white;
+  z-index: 1001;
+}
+
+#debug-menu h3 {
+  margin: 0 0 1rem 0;
+  color: #ff4444;
+}
+
+.debug-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.debug-buttons button {
+  background: #4CAF50;
+  border: none;
+  padding: 8px 16px;
+  color: white;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.debug-buttons button:hover {
+  background: #45a049;
+}
+
+#player.mini {
+  transform: scale(0.5);
+  transition: transform 0.3s;
+}
+
+#player.mini-flip {
+  transform: scale(-0.5, 0.5);
+  transition: transform 0.3s;
+}
+
+.sword {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  pointer-events: none;
+  animation: spin 0.5s infinite linear;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
