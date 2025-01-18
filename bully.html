@@ -22,30 +22,34 @@
 
     <style>
         
-        p {
+        p 
+        {
             color:white;
             text-align: center;
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
         }
 
-        a {
+        a 
+        {
             color:lightgrey;
         }
 
-        body {
+        body 
+        {
             background-image: url("/assets/bullybg.png");
             margin: 0;
             overflow: hidden;
         }
 
-        button {
-            
+        button
+         {   
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
             text-align: center;
             align-self: center;
         }
 
-        .GeneratedMarquee {
+        .GeneratedMarquee 
+        {
             font-family:'Comic Sans MS';
             font-size:2em;
             line-height:1.3em;
@@ -53,59 +57,63 @@
             padding:1.5em;   
         }
 
-        .background {
-            position: fixed; /* Stay in the same position during scroll */
+        .background
+        {
+            position: fixed;
             top: 0;
             left: 0;
-            width: 200%; /* Double size to create the effect */
-            height: 200%; /* Double size to create the effect */
-            background: url('/assets/bullybg.png') repeat; /* Replace with your image */
+            width: 200%;
+            height: 200%; 
+            background: url('/assets/bullybg.png') repeat;
             animation: scroll-diagonal 126s linear infinite;
-            z-index: -1; /* Send the background behind content */
-            }
+            z-index: -1;
+        }
 
-            @keyframes scroll-diagonal {
-            from {
+        @keyframes scroll-diagonal 
+        {
+            from 
+            {
                 transform: translate(0, 0);
             }
-            to {
+            to 
+            {
                 transform: translate(-50%, -50%);
             }
-            }
+         }
 
-            .hiddenFrame{
-    height:1px;
-    width:1px;
-    opacity: 0;
-    }
+        .hiddenFrame
+        {
+            height:1px;
+            width:1px;
+            opacity: 0;
+        }
 
-        .shakeImage {
-  /* start the shake animation and make the animation last for 0.1 seconds */
-  animation: shake 0.01s;
+        .shakeImage
+        {
+            animation: shake 0.01s;
+            animation-iteration-count: infinite;
+        }
 
-  /* when the animation is finished, start again */
-  animation-iteration-count: infinite;
-}
-
-@keyframes shake {
-  0% { transform: translate(1px, 1px); }
-  5% { transform: translate(0px, 0px); }
-  10% { transform: translate(-1px, -1px); }
-  15% { transform: translate(0px, 0px); }
-  20% { transform: translate(-1px, 0px); }
-  30% { transform: translate(1px, 1px); }
-  40% { transform: translate(1px, -1px); }
-  50% { transform: translate(-1px, 1px); }
-  60% { transform: translate(0px, 1px); }
-  65% { transform: translate(0px, 1px); }
-  70% { transform: translate(1px, 1px); }
-  75% { transform: translate(0px, 0px); }
-  80% { transform: translate(-1px, -1px); }
-  85% { transform: translate(0px, 0px); }
-  90% { transform: translate(1px, 1px); }
-  95% { transform: translate(1px, 0px); }
-  100% { transform: translate(1px, -1px); }
-}
+        @keyframes shake
+        {
+            0% { transform: translate(1px, 1px); }
+            5% { transform: translate(0px, 0px); }
+            10% { transform: translate(-1px, -1px); }
+            15% { transform: translate(0px, 0px); }
+            20% { transform: translate(-1px, 0px); }
+            30% { transform: translate(1px, 1px); }
+            40% { transform: translate(1px, -1px); }
+            50% { transform: translate(-1px, 1px); }
+            60% { transform: translate(0px, 1px); }
+            65% { transform: translate(0px, 1px); }
+            70% { transform: translate(1px, 1px); }
+            75% { transform: translate(0px, 0px); }
+            80% { transform: translate(-1px, -1px); }
+            85% { transform: translate(0px, 0px); }
+            90% { transform: translate(1px, 1px); }
+            95% { transform: translate(1px, 0px); }
+            100% { transform: translate(1px, -1px); }
+        }
     </style>
 </head>
 <body>
