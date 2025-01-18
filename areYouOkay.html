@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hovering Image</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: black;
+            cursor: url('/assets/otherMouse.png'), auto;
+        }
+
+        .hover {
+            position: relative;
+            animation: float 5s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(20);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .backLink {
+            margin-top: 20px;
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .back-link:hover {
+            text-decoration: solid;
+        }
+    </style>
+</head>
+<body>
+    <a href="/assets/maze.webp"><img class="hover" src="/assets/areuok.webp" alt="Hovering Image"></a>
+    <a href="/" class="backLink">Go back</a>
+</body>
+</html>
